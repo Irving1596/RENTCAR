@@ -11,6 +11,7 @@ var _SUCURSAL = require("./SUCURSAL");
 const sequelize = new Sequelize(dbConfig.db, dbConfig.user, dbConfig.password, {
     host: dbConfig.host,
     dialect: dbConfig.dialect,
+    logging: false,
     // operatorsAliases: false,
     pool: dbConfig.pool
 });
