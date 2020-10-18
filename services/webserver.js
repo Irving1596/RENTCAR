@@ -12,9 +12,9 @@ function initialize() {
     return new Promise((resolve, reject) => {
 
         // force: true will drop the table if it already exists
-        db.sequelize.sync({ force: true }).then(() => {
-            console.log('Drop and Resync Sequelize');
-        });
+        // db.sequelize.sync({ force: true }).then(() => {
+        //   console.log('Drop and Resync Sequelize');
+        //});
         const app = express();
         httpServer = http.createServer(app);
 

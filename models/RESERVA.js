@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
         model: 'CLIENTES',
         key: 'ID'
       },
-      unique: "FK_CLIENTE"
+      unique: "reserva_ibfk_1"
     },
     ID_ASUCURSAL: {
       type: DataTypes.INTEGER,
@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
         model: 'A_SUCURSAL',
         key: 'ID'
       },
-      unique: "FK_ASUCURSAL"
+      unique: "reserva_ibfk_2"
     },
     CANTIDAD: {
       type: DataTypes.INTEGER,
@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
         model: 'SUCURSAL',
         key: 'ID'
       },
-      unique: "FK_SUC_RETIRO"
+      unique: "reserva_ibfk_3"
     },
     ID_SUCURSAL_DEVOLUCION: {
       type: DataTypes.INTEGER,
@@ -48,7 +48,7 @@ module.exports = function(sequelize, DataTypes) {
         model: 'SUCURSAL',
         key: 'ID'
       },
-      unique: "FK_SUC_DEVOLUCION"
+      unique: "reserva_ibfk_4"
     },
     FECHA_RETIRO: {
       type: DataTypes.DATE,
