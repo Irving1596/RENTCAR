@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
         model: 'A_MARCA',
         key: 'ID'
       },
-      unique: "FK_MARCA_AUTO"
+      unique: "a_flotas_ibfk_1"
     },
     MODELO: {
       type: DataTypes.STRING(25),
@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
         model: 'A_TIPO',
         key: 'ID'
       },
-      unique: "FK_TIPO_AUTO"
+      unique: "a_flotas_ibfk_2"
     },
     TARIFA_DIARIA: {
       type: DataTypes.DECIMAL,

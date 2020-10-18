@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
         model: 'SUCURSAL',
         key: 'ID'
       },
-      unique: "FK_SUCURSAL"
+      unique: "a_sucursal_ibfk_1"
     },
     ID_FLOTA: {
       type: DataTypes.INTEGER,
@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
         model: 'A_FLOTAS',
         key: 'ID'
       },
-      unique: "FK_AFLOTAS"
+      unique: "a_sucursal_ibfk_2"
     },
     CANTIDAD_TOTAL: {
       type: DataTypes.INTEGER,
@@ -34,10 +34,6 @@ module.exports = function(sequelize, DataTypes) {
     CANTIDAD_DISPONIBLE: {
       type: DataTypes.INTEGER,
       allowNull: false
-    },
-    UPDATED_AT: {
-      type: DataTypes.DATE,
-      allowNull: true
     }
   }, {
     sequelize,
