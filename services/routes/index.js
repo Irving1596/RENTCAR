@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
-//app.use('/UserDepto', require('./userdepto'));
+app.use('/Autos', require('./autos'));
+app.use('/Clientes', require('./clientes'));
+
 
 module.exports = app;

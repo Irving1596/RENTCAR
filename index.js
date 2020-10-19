@@ -1,5 +1,5 @@
 const webServer = require('./services/webserver.js');
-const database = require('./models/init-models.js');
+const db = require('./models/index.js');
 const dbConfig = require('./config/database.js');
 const defaultThreadPoolSize = 4;
 
@@ -13,7 +13,7 @@ async function startup() {
     try {
         console.log('Initializing database module');
 
-        await database.sequelize.authenticate();
+        await db.sequelize.authenticate();
         console.log('Connection has been established successfully.');
     } catch (err) {
         console.error(err);
