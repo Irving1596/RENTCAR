@@ -30,7 +30,7 @@ RESTfulAPI para alquiler de vehiculos
     }
 
 3- Cualquier otro feature adicional que agregue valor a la aplicacion
-- Implementación de autenticación utilizando JWT.  
+- Implementación de autenticación utilizando JWT y encriptación de contraseña.  
 Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARIO Y CONTRASEÑA)
     - `POST http://localhost:3000/Clientes/login`  
     
@@ -40,7 +40,7 @@ Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARI
     
     "PASSWORD":"123456"
    }
-    
+   ## PLUS 
 4- Los usuarios crean su cuenta para acceder a la aplicación.
 - `POST http://localhost:3000/Clientes/login`. 
 
