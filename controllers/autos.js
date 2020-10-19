@@ -6,31 +6,14 @@ const FLOTAS = models.A_FLOTAS;
 const A_TIPO = models.A_TIPO;
 const A_MARCA = models.A_MARCA;
 const RESERVA = models.RESERVA;
-
-
-
+const CLIENTES = models.CLIENTES;
 const Op = db.Sequelize.Op;
 const controller = {};
-SUCURSAL.hasMany(A_SUCURSAL, { 'foreignKey': 'ID' });
-A_SUCURSAL.belongsTo(SUCURSAL, { 'foreignKey': 'ID_SUCURSAL' });
-FLOTAS.hasMany(A_SUCURSAL, { 'foreignKey': 'ID' });
-A_SUCURSAL.belongsTo(FLOTAS, { 'foreignKey': 'ID_FLOTA' });
-A_TIPO.hasMany(FLOTAS, { 'foreignKey': 'ID' });
-FLOTAS.belongsTo(A_TIPO, { 'foreignKey': 'ID_A_TIPO' });
-A_MARCA.hasMany(FLOTAS, { 'foreignKey': 'ID' });
-FLOTAS.belongsTo(A_MARCA, { 'foreignKey': 'ID_A_MARCA' });
 
 /*
  *SE OBTIENE FLOTA DISPONIBLE DE AUTOS
  */
 controller.getAllAutos = async function get(req, res, next) {
-
-
-    //const title = req.query.title;
-    //var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
-    console.log("MODELS", models);
-    console.log("A_SUCURSAL", A_SUCURSAL);
-    console.log("SUCURSAL", SUCURSAL);
     A_SUCURSAL.findAll({
             include: [{
                 model: SUCURSAL,
@@ -40,6 +23,7 @@ controller.getAllAutos = async function get(req, res, next) {
                 model: FLOTAS,
                 include: [{
                         model: A_TIPO,
+                        as: 'TIPO_AUTO',
                         required: true,
                         attributes: ['NOMBRE']
                     },
@@ -95,7 +79,14 @@ controller.crearOrdenAuto = async function post(req, res, next) {
             MSG: 'No hay Autos disponible para la orden solicitada. Quedan disponibles:' + cantidad_disponible
         });
     }
-
+    const CLIENTE = await CLIENTES.findOne({ where: { USUARIO: ordenAuto.ID_CLIENTE }, attributes: ['ID'] });
+    if (!CLIENTE) {
+        return res.status(404).json({
+            OK: false,
+            MSG: 'usuario no encontrado' //es preferible aveces no especificar el error, para evitar ataques de fuerza bruta
+        })
+    }
+    ordenAuto.ID_CLIENTE = CLIENTE.dataValues.ID;
     // Se guarda en la base de datos
     RESERVA.create(ordenAuto)
         .then(data => {
@@ -126,7 +117,7 @@ controller.crearOrdenAuto = async function post(req, res, next) {
 //Funcion que ordena la data de orden de autos
 function getOrdenAutoBody(req) {
     const ordenAuto = {
-        ID_CLIENTE: req.body.ID_CLIENTE,
+        ID_CLIENTE: req.body.USUARIO,
         ID_ASUCURSAL: req.body.ID_ASUCURSAL,
         ID_SUCURSAL_RETIRO: req.body.ID_SUCURSAL_RETIRO,
         CANTIDAD: req.body.CANTIDAD,

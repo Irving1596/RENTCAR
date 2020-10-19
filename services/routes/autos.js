@@ -16,7 +16,7 @@ routerAutos.get('/listAllAutos', autos.getAllAutos);
  * SE CREAR LA ORDEN DE ALQUILER
  */
 routerAutos.post('/crearOrdenAuto', [
-        check('ID_CLIENTE', 'El ID DEL CLIENTE es obligatorio').not().isEmpty(),
+        check('USUARIO', 'El ID DEL CLIENTE es obligatorio').not().isEmpty(),
         check('ID_ASUCURSAL', 'EL ID DEL AUTO es obligatorio').not().isEmpty(),
         check('ID_SUCURSAL_RETIRO', 'LA SUCURSAL DE RETIRO es obligatorio').not().isEmpty(),
         check('ID_SUCURSAL_DEVOLUCION', 'LA SUCURSAL DE DEVOLUCION es obligatorio').not().isEmpty(),
