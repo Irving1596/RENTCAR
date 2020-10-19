@@ -50,7 +50,7 @@ Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARI
    }
 ## PLUS 
 4- Los usuarios crean su cuenta para acceder a la aplicación.
-- `POST http://localhost:3000/Clientes/login`. 
+- `POST http://localhost:3000/Clientes/crearCuenta`. 
 
    `BODY:`  
   {
