@@ -41,7 +41,7 @@ RESTfulAPI para alquiler de vehiculos
     }
 
 3- Cualquier otro feature adicional que agregue valor a la aplicacion
-- Implementación de autenticación utilizando JWT, variables de entorno y encriptación de contraseña.  
+- Implementación de autenticación utilizando JWT, variables de entorno, validación de campos y encriptación de contraseña.  
 Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARIO Y CONTRASEÑA)
     - `POST http://localhost:3000/Clientes/login`  
     
