@@ -1,2 +1,79 @@
 # RENTCAR
 RESTfulAPI para alquiler de vehiculos
+# Documentación
+## Tecnologias Utilizadas
+`App tier: Node.js 12.6` 
+
+`Data tier: Mysql 8.0`  
+
+## IDE utilizado
+
+`Visual Code` 
+
+## EndPoints 
+1- Lista de autos disponibles para alquiler
+- `GET http://localhost:3000/Autos/listAllAutos`
+
+2-El usuario crea una orden para el alquiler de un auto
+- `POST http://localhost:3000/Autos/crearOrdenAuto`
+
+   `BODY:`    
+    {"ID_CLIENTE":"2",  
+    "ID_ASUCURSAL":"2",  
+    "ID_SUCURSAL_RETIRO":"1",  
+    "ID_SUCURSAL_DEVOLUCION":"1",  
+    "FECHA_RETIRO":"2020-10-17",  
+    "HORA_RETIRO":"06:00:00",  
+    "FECHA_DEVOLUCION":"2020-10-17",  
+    "HORA_DEVOLUCION":"16:00:00",  
+    "COMENTARIO":"que esL es" 
+    }
+
+3- Cualquier otro feature adicional que agregue valor a la aplicacion
+- Implementación de autenticación utilizando JWT y encriptación de contraseña.  
+Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARIO Y CONTRASEÑA)
+    - `POST http://localhost:3000/Clientes/login`  
+    
+    `BODY:`  
+   { 
+   "USUARIO":"julio1",  
+    
+    "PASSWORD":"123456"
+   }
+   ## PLUS 
+4- Los usuarios crean su cuenta para acceder a la aplicación.
+- `POST http://localhost:3000/Clientes/login`. 
+
+   `BODY:`  
+  {
+  "USUARIO":"julio15",  
+
+  "PASSWORD":"123456",  
+
+  "NOMBRE":"Julio",  
+
+   "APELLIDO":"Garcias",  
+
+  "CORREO":"julio.garcia@hotmail.com",  
+
+  "CELULAR":"67029222"   
+  }. 
+  
+ 5- El usuario obtiene los datos de su perfil.
+ - `GET http://localhost:3000/Clientes/miPerfil?USUARIO=julio1`. 
+     
+   `HEADERS:`  
+   `x-token	`    `{{token}}`
+   
+ 6- El usuario puede consultar el historial de autos alquilados
+  - `GET http://localhost:3000/Clientes/miHistorialAlquiler`. 
+     
+   `HEADERS:`  
+     
+   `x-token	`    `{{token}}`
+ 
+   
+ 
+  
+
+
