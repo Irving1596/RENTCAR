@@ -85,7 +85,7 @@ Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARI
     
     
 Data de endpoint y ejemplos en POSTMAN.   
-`https://www.getpostman.com/collections/baa4b25ddf6d72a558d5`. 
+https://www.postman.com/collections/baa4b25ddf6d72a558d5  
 
  
  ## Pasos para la instalación. 
