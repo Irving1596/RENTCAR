@@ -4,14 +4,17 @@ RESTfulAPI para alquiler de vehiculos
 ## Tecnologias Utilizadas
 `App tier: Node.js 12.6` 
 
-`Data tier: Mysql 8.0`  
+`Data tier: Mysql 8.0` 
+
+`Conexión a la base de datos: Sequelize V6(ORM) `
 
 ## IDE utilizado
 
 `Visual Code`   
 
 
-## Base de Datos 
+## Base de Datos   
+- `El script SQL DDL esta en el repositorio`
 
 - `Diagrama ENTIDAD-RELACION`
 
@@ -38,7 +41,7 @@ RESTfulAPI para alquiler de vehiculos
     }
 
 3- Cualquier otro feature adicional que agregue valor a la aplicacion
-- Implementación de autenticación utilizando JWT y encriptación de contraseña.  
+- Implementación de autenticación utilizando JWT, variables de entorno y encriptación de contraseña.  
 Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARIO Y CONTRASEÑA)
     - `POST http://localhost:3000/Clientes/login`  
     
@@ -79,6 +82,11 @@ Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARI
    `HEADERS:`  
      
    `x-token	`    `{{token}}`
+    
+    
+Data de endpoint y ejemplos en POSTMAN.   
+`https://www.getpostman.com/collections/baa4b25ddf6d72a558d5`. 
+
  
  ## Pasos para la instalación. 
  
@@ -91,7 +99,7 @@ Situarse en el directorio `RENTCAR`
 
 Ejecutar  `npm install` Con este comando instalara las dependencias necesarias. 
 
-Ejecutar `npm run dev` Este comando levantara el aplicativo .
+Ejecutar `npm run dev` Este comando levantara el aplicativo.
 
  
   
