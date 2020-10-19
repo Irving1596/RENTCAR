@@ -8,7 +8,15 @@ RESTfulAPI para alquiler de vehiculos
 
 ## IDE utilizado
 
-`Visual Code` 
+`Visual Code`   
+
+
+## Base de Datos 
+
+- `Diagrama ENTIDAD-RELACION`
+
+<img src="https://github.com/Irving1596/RENTCAR/blob/dev/DATA_MODEL_TRENTCAR.png" width="620">
+
 
 ## EndPoints 
 1- Lista de autos disponibles para alquiler
@@ -40,7 +48,7 @@ Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARI
     
     "PASSWORD":"123456"
    }
-   ## PLUS 
+## PLUS 
 4- Los usuarios crean su cuenta para acceder a la aplicación.
 - `POST http://localhost:3000/Clientes/login`. 
 
@@ -72,7 +80,19 @@ Login: Los usuarios acceden a la aplicacion por medio de sus credenciales(USUARI
      
    `x-token	`    `{{token}}`
  
-   
+ ## Pasos para la instalación. 
+ 
+Tener git, NPM, MySQL y Node.JS instalado. 
+
+
+Clonar el repositorio. Ejecutar `git clone https://github.com/Irving1596/RENTCAR.git`   
+
+Situarse en el directorio `RENTCAR`   
+
+Ejecutar  `npm install` Con este comando instalara las dependencias necesarias. 
+
+Ejecutar `npm run dev` Este comando levantara el aplicativo .
+
  
   
 
