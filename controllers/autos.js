@@ -14,7 +14,13 @@ const controller = {};
  *SE OBTIENE FLOTA DISPONIBLE DE AUTOS
  */
 controller.getAllAutos = async function get(req, res, next) {
+
     A_SUCURSAL.findAll({
+            where: {
+                CANTIDAD_DISPONIBLE: {
+                    [Op.gt]: 0
+                }
+            },
             include: [{
                 model: SUCURSAL,
                 required: true,
