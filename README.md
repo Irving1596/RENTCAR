@@ -29,7 +29,7 @@ RESTfulAPI para alquiler de vehiculos
 - `POST http://localhost:3000/Autos/crearOrdenAuto`
 
    `BODY:`    
-    {"ID_CLIENTE":"2",  
+    {"ID_CLIENTE":"irvings",  
     "ID_ASUCURSAL":"2",  
     "ID_SUCURSAL_RETIRO":"1",  
     "ID_SUCURSAL_DEVOLUCION":"1",  
